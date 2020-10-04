@@ -30,7 +30,7 @@ public class MailController {
 	public String sendMail() throws MessagingException {
 		Mail mail = getMail();
 		emailSenderService.sendEmail(mail);
-		return "Check your email";
+		return "Verifique seu e-mail";
 
 	}
 
@@ -38,9 +38,9 @@ public class MailController {
 		Mail mail = new Mail();
 		mail.setFrom(customPropertyConfig.mailFrom);
 		mail.setTo("<thiago.santiago@aluno.uepb.edu.br>");
-		mail.setSubject("Simple mail with AWS SES and Spring Boot");
+		mail.setSubject("Email simples com AWS SES e Spring Boot");
 		Map<String, Object> model = new HashMap<>();
-		model.put("templateVariable", "Simple mail with aws..");
+		model.put("templateVariable", "E-mail simples com aws..");
 		mail.setModel(model);
 		return mail;
 	}
